@@ -1,0 +1,10 @@
+header{
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+    
+    .logo{
+        object-fit: contain;
+        width: 25%;
+        height: 2rem;   
+    }
+}
