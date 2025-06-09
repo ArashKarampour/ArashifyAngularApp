@@ -1,0 +1,12 @@
+<div class="column">
+    <img [src]="product.image" alt="Product image">
+    <h2 class="title" >{{ product.name }}</h2>
+    <div class="row gap-half">
+        <span>Price:</span>
+        <span>{{ product.price | currency:'€' }}</span>
+    </div>
+    <p-rating 
+        [(ngModel)]="product.rating"
+        [readonly]="true"
+     />
+</div>

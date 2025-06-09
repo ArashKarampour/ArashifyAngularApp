@@ -1,6 +1,14 @@
-<p>home works!</p>
 @if(products){
-    @for(product of products; track product.id){
-        <p>{{product.name}}</p>
-    }
+    <div class="row wrap gap-1 space-between">
+        @for(product of products; track product.id){
+            <app-product [product]="product"></app-product>
+        }
+    </div>
+    <p-paginator (onPageChange)="onPageChange($event)"
+     [first]="0" 
+     [rows]="rows" 
+     [totalRecords]="totalRecords" 
+     [rowsPerPageOptions]="[5, 10, 15]" 
+     />
 }
+

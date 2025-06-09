@@ -1,0 +1,19 @@
+.title{
+    margin: 0.5rem 0;
+}
+
+.column{
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+}
+
+.row{
+    margin-bottom: 0.5rem;
+}
+
+img{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;    
+    object-fit: contain;
+}
