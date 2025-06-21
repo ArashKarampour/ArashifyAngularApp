@@ -1,15 +1,39 @@
+<!-- addProductPopup -->
+<app-product-popup [(visiblity)]="addPopupVisibility" [header]="'Add Product'"  (saveProduct)="onSaveAddProduct($event)">
+</app-product-popup>
+<!-- editProductPopup -->
+<app-product-popup [(visiblity)]="editPopupVisibility" [header]="'Edit Product'" [product]="selectedProduct" (saveProduct)="onSaveEditProduct($event)">
+</app-product-popup>
+
+<!-- Add Product Button -->
+<div class="row full-center">
+    <button
+    id="addBtn"
+    type="button"
+    pButton
+    icon="pi pi-plus"
+    (click)="toggleAddPopup()"
+    >
+    Add Product
+    </button>
+</div>
+
+
+<!-- Prodcuts Section -->
 @if(products){
     <div class="column space-between">
-        <div class="row wrap gap-1 space-between">
+        <div class="row wrap gap-1 space-around">
             @for(product of products; track product.id){
-                <app-product [product]="product"></app-product>
+                <app-product [product]="product" (editProductOutput)="toggleEditPopup($event)" (deleteProductOutput)="deleteSelectedProduct($event)"></app-product>
             }
         </div>
         <p-paginator (onPageChange)="onPageChange($event)"
+         class="paginator"
          [first]="0"
          [rows]="rows"
          [totalRecords]="totalRecords"
          [rowsPerPageOptions]="[5, 10, 15]"
+         #paginator
          />
     </div>
 }

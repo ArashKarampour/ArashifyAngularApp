@@ -26,21 +26,21 @@ html, body, app-root{
     flex-direction: column;
 }
 
-mt-15{
+.mt-15{
     margin-top: 15px;
 }
 
 
-mt-25{
+.mt-25{
     margin-top: 25px;
 }
 
-mb-15{
+.mb-15{
     margin-bottom: 15px;
 }
 
 
-mb-25{
+.mb-25{
     margin-bottom: 25px;
 }
 
@@ -60,8 +60,16 @@ mb-25{
     gap: 2rem
 }
 
+.gap-4{
+    gap: 4rem
+}
+
 .space-between{
     justify-content: space-between;
+}
+
+.space-around{
+    justify-content: space-around;
 }
 
 .align-center{
@@ -75,6 +83,10 @@ mb-25{
 .full-center{
     align-items: center;
     justify-content: center;
+}
+
+.justify-end{
+    justify-content: flex-end;
 }
 
 .hidden{

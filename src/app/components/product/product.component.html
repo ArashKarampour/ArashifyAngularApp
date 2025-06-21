@@ -1,12 +1,34 @@
 <div class="column">
-    <img [src]="product.image" alt="Product image">
+    <img [src]="product.image" alt="Product image" width="250" height="250">
     <h2 class="title" >{{ product.name }}</h2>
     <div class="row gap-half">
         <span>Price:</span>
-        <span>{{ product.price | currency:'€' }}</span>
+        <span>{{ getPrice(product.price) | currency:'EUR' }}</span>
     </div>
-    <p-rating 
+    <p-rating
+        class="rating" 
         [(ngModel)]="product.rating"
         [readonly]="true"
      />
+     <div class="row space-around">
+        <button
+        type="button"
+        pButton
+        icon="pi pi-pencil"
+        (click)="editProduct()"
+        >
+        Edit
+        </button>
+        <button
+        type="button"
+        pButton
+        icon="pi pi-trash"
+        severity="danger"
+        (click)="confirmDeleteProduct($event)"
+        >
+        Delete
+        </button>
+        <p-toast />
+        <p-confirmpopup />
+     </div>
 </div>

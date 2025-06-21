@@ -1,0 +1,22 @@
+<p-dialog [header]="header" [modal]="true" [(visible)]="visiblity" [closable]="false" [style]="{ width: '25rem' }">
+    <div class="row align-center space-between mb-15">
+        <label for="name">Name</label>
+        <input pInputText id="name" [(ngModel)]="product.name" autocomplete="off" />
+    </div>
+    <div class="row align-center space-between mb-15">
+        <label for="price" class="font-semibold w-24">Price</label>
+        <input pInputText id="price" [(ngModel)]="product.price" autocomplete="off" />
+    </div>
+    <div class="row align-center space-between mb-15">
+        <label for="image" class="font-semibold w-24">Image</label>
+        <input pInputText id="image" [(ngModel)]="product.image" autocomplete="off" />
+    </div>
+    <div class="row align-center space-between mb-25">
+        <label class="font-semibold w-24">Rating</label>
+        <p-rating  [(ngModel)]="product.rating" />
+    </div>
+    <div class="row justify-end gap-2">
+        <button pButton severity="secondary" (click)="changeVisibilty()">Cancel</button>
+        <button pButton (click)="onSave()">Save</button>
+    </div>
+</p-dialog>

@@ -1,4 +1,5 @@
 .title{
+    font-size: large;
     margin: 0.5rem 0;
 }
 
@@ -12,8 +13,12 @@
     margin-bottom: 0.5rem;
 }
 
+.rating{
+    margin-bottom: 0.5rem;
+}
+
 img{
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;    
-    object-fit: contain;
+    object-fit: cover;
 }
