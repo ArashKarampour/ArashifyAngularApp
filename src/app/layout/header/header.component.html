@@ -1,4 +1,27 @@
-<header class="row space-between">
-    <img src="assets/images/Arashify-Clothing-logo-v2.svg" alt="Logo" class="logo">   
-    <p-button class="p-pencil" label="Theme" (onClick)="toggleDarkMode()"><i class="pi pi-pencil"  style="font-size: 1rem"></i></p-button>
+<header class="row space-between"> 
+    <img src="assets/images/Arashify-Clothing-logo-v2.svg" alt="Logo" class="logo">  
+    <p-menubar [model]="items" [style]="{ border : 'none'}">
+        <ng-template  #item let-item>
+            <ng-container *ngIf="item.route; else urlRef">
+                <a [routerLink]="item.route" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}" class="p-menubar-item-link">
+                    <span [class]="item.icon"></span>
+                    <span class="ml-2">{{ item.label }}</span>
+                </a>
+            </ng-container>
+            <ng-template #urlRef>
+                <a *ngIf="item.url; else noLink" [href]="item.url" class="p-menubar-item-link">
+                    <span [class]="item.icon"></span>
+                    <span class="ml-2">{{ item.label }}</span>
+                </a>
+            </ng-template>
+            <ng-template #noLink>
+                <div class="p-menubar-item-link">
+                    <span [class]="item.icon"></span>
+                    <span class="ml-2">{{ item.label }}</span>
+                    <span class="pi pi-fw pi-angle-down ml-2"></span>
+                </div>
+            </ng-template>
+        </ng-template>
+        <p-button class="p-pencil" label="Theme" (onClick)="toggleDarkMode()"><i class="pi pi-pencil"  style="font-size: 1rem"></i></p-button>
+    </p-menubar>    
 </header>

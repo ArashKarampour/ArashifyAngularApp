@@ -1,0 +1,19 @@
+:host{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+div.main{
+    text-align: center;
+}
+p{
+    margin-left: 1rem;
+    color: rgb(93, 93, 93);
+    width: 50%;
+}
+ul{
+    color: rgb(93, 93, 93);
+}
+@media screen and (max-width: 768px) {
+    p{
+        width: 100%;
+    }
+}

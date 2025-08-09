@@ -6,6 +6,10 @@
 }
 
 #addBtn{
-    width: 75%;
+    width: 10rem;
     margin: 1rem;
+    position: fixed;
+    bottom: 3rem;
+    right: 1rem;
+    z-index: 10;
 }
