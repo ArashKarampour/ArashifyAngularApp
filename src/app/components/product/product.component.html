@@ -1,6 +1,6 @@
 <div class="column">
     <img [src]="product.image" alt="Product image" width="250" height="250">
-    <h2 class="title" >{{ product.name }}</h2>
+    <h2 class="title" >{{ product.name | truncateName: 16: "..." }}</h2>
     <div class="row gap-half">
         <span>Price:</span>
         <span>{{ getPrice(product.price) | currency:'EUR' }}</span>
