@@ -1,22 +1,28 @@
 <p-dialog [header]="header" [modal]="true" [(visible)]="visiblity" [closable]="false" [style]="{ width: '25rem' }">
-    <div class="row align-center space-between mb-15">
-        <label for="name">Name</label>
-        <input pInputText id="name" [(ngModel)]="product.name" autocomplete="off" />
-    </div>
-    <div class="row align-center space-between mb-15">
-        <label for="price" class="font-semibold w-24">Price</label>
-        <input pInputText id="price" [(ngModel)]="product.price" autocomplete="off" />
-    </div>
-    <div class="row align-center space-between mb-15">
-        <label for="image" class="font-semibold w-24">Image</label>
-        <input pInputText id="image" [(ngModel)]="product.image" autocomplete="off" />
-    </div>
-    <div class="row align-center space-between mb-25">
-        <label class="font-semibold w-24">Rating</label>
-        <p-rating  [(ngModel)]="product.rating" />
-    </div>
-    <div class="row justify-end gap-2">
-        <button pButton severity="secondary" (click)="changeVisibilty()">Cancel</button>
-        <button pButton (click)="onSave()">Save</button>
-    </div>
+    <form [formGroup]="productForm" (ngSubmit)="onSave()">
+        <div [hidden]="true" class="row align-center space-between mb-15">
+            <label [hidden]="true" for="id">id</label>
+            <input [hidden]="true" pInputText id="id" formControlName="id" autocomplete="off" />
+        </div>
+        <div class="row align-center space-between mb-15">
+            <label for="name">Name</label>
+            <input pInputText id="name" formControlName="name" autocomplete="off" />
+        </div>
+        <div class="row align-center space-between mb-15">
+            <label for="price" class="font-semibold w-24">Price</label>
+            <input pInputText id="price" formControlName="price" autocomplete="off" />
+        </div>
+        <div class="row align-center space-between mb-15">
+            <label for="image" class="font-semibold w-24">Image</label>
+            <input pInputText id="image" formControlName="image" autocomplete="off" />
+        </div>
+        <div class="row align-center space-between mb-25">
+            <label class="font-semibold w-24">Rating</label>
+            <p-rating  formControlName="rating" />
+        </div>
+        <div class="row justify-end gap-2">
+            <button pButton severity="secondary" type="button" (click)="changeVisibilty()">Cancel</button>
+            <button pButton [disabled]="!productForm.valid" type="submit">Save</button>
+        </div>
+    </form>
 </p-dialog>
