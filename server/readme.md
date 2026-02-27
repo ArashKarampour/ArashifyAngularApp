@@ -1,4 +1,4 @@
-# Node.js Server for Angular Storefront - Crash Course
+# Node.js Server for Angular Frontend
 
 This server provides the backend functionality for the Angular frontend, allowing users to perform CRUD (Create, Read, Update, Delete) operations on products. The server utilizes Express and interacts with a JSON file to manage product data.
 
@@ -6,10 +6,9 @@ This server provides the backend functionality for the Angular frontend, allowin
 
 - [Features](#features)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
+   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 
 ## Features
 
@@ -29,9 +28,13 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/thecodedeck/angular-cc-1-server.git
+   git clone git@github.com:ArashKarampour/ArashifyAngularApp.git
    ```
-2. Install dependencies:
+2. go into the server directory:
+   ```bash
+   cd server
+   ```
+3. Install dependencies:
    ```bash
    npm install
    ```
@@ -45,7 +48,3 @@ Before you begin, ensure you have the following installed:
 2. The server will be running on http://localhost:3000/.
 
 3. The Angular frontend will interact with these API endpoints to perform CRUD operations on products.
-
-## License
-
-This project is licensed under the MIT License.
